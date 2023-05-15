@@ -1,42 +1,28 @@
-import { Fighter } from "./fighter.js";
+import { Fighter } from "./fighter";
 
-describe("Given a Fighter class", () => {
+describe("Given a class Fighter", () => {
   describe("When we instantiate it", () => {
-    test("Then it should create an object with the properties of the class", () => {
-      const newObject = new Fighter(
-        "Tyrion",
-        "Lannister",
-        34,
+    test("Then it should have an object with the properties of the class", () => {
+      const character = new Fighter(
+        "Oberyn",
+        "Martell",
+        41,
         "alive",
-        "sword",
-        10
+        "Primero pego y luego pregunto",
+        "lance",
+        7
       );
 
-      expect(newObject).toHaveProperty("name", "Tyrion");
-      expect(newObject).toHaveProperty("houseName", "Lannister");
-      expect(newObject).toHaveProperty("age", 34);
-      expect(newObject).toHaveProperty("status", "alive");
-      expect(newObject).toHaveProperty("weapon", "sword");
-      expect(newObject).toHaveProperty("skill", 10);
-      expect(newObject).toHaveProperty("series", "Game of Thrones");
-      expect(newObject).toHaveProperty(
+      expect(character).toHaveProperty("name", "Oberyn");
+      expect(character).toHaveProperty("house", "Martell");
+      expect(character).toHaveProperty("age", 41);
+      expect(character).toHaveProperty("status", "alive");
+      expect(character).toHaveProperty(
         "speech",
         "Primero pego y luego pregunto"
       );
-    });
-  });
-  describe("When we call the method die()", () => {
-    test("Then it should return 'dead'", () => {
-      const newObject = new Fighter();
-
-      expect(newObject.die()).toBe("dead");
-    });
-  });
-  describe("When we call the method talk()", () => {
-    test("Then it should return 'dead'", () => {
-      const newObject = new Fighter();
-
-      expect(newObject.talk()).toBe("Primero pego y luego pregunto");
+      expect(character).toHaveProperty("weapon", "lance");
+      expect(character).toHaveProperty("skill", 7);
     });
   });
 });
